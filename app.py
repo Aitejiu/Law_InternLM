@@ -20,7 +20,7 @@ def load_chain():
     )
 
     # 加载自定义 LLM
-    llm = InternLM_LLM(model_path = "/home/xlab-app-center/model")
+    llm = InternLM_LLM(model_path = "/home/xlab-app-center/model/InternLM-7b")
 
     # 定义一个 Prompt Template
     template = """你将作为一个知道中华人民共和国刑法，中华人民共和国民法典，中国人民共和国劳动法的律师，使用以下上下文来回答最后的问题。如果你不知道答案，就说你不知道，不要试图编造答案。尽量使答案简明扼要。总是在回答的最后说“谢谢你的提问！”。
@@ -63,11 +63,11 @@ import os
 os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 
 # 下载模型
-os.system('huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 --local-dir /root/xlab-app-center/model/sentence-transformer')
+os.system('huggingface-cli download --resume-download sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 --local-dir /home/xlab-app-center/model/sentence-transformer')
 
 # 将模型导入
 from openxlab.model import download
-download(model_repo='OpenLMLab/InternLM-7b', output='/root/xlab-app-center/model/InternLM-7b')
+download(model_repo='OpenLMLab/InternLM-7b', output='/home/xlab-app-center/model/InternLM-7b')
 
 import gradio as gr
 
