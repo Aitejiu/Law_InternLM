@@ -71,7 +71,7 @@ os.system('huggingface-cli download --resume-download sentence-transformers/para
 
 # 将模型导入
 from openxlab.model import download
-download(model_repo='OpenLMLab/InternLM-chat-7b', output='/home/xlab-app-center/model/InternLM-chat-7b')
+download(model_repo='aitejiu/personal_assistant', output='/home/xlab-app-center/personal_assistant')
 
 import gradio as gr
 
